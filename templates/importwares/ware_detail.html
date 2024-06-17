@@ -1,0 +1,21 @@
+{% extends 'importwares/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ ware.name }}</title>
+</head>
+<body>
+    <h1>{{ ware.name }}</h1>
+    <p>{{ ware.description }}</p>
+    <p>Price: {{ ware.price }}</p>
+    <p>Quantity: {{ ware.imported_quantity }}</p>
+    <p>Warehouse From: {{ ware.warehouse_from }}</p>
+    <p>Warehouse Location: {{ ware.warehouse_loc }}</p>
+    <p>Warehouse: {{ ware.warehouse }}</p>
+    <img src="{{ ware.image.url }}" alt="{{ ware.name }}">
+    <p>Imported: {{ ware.imported }}</p>
+    <p>Exported: {{ ware.exported }}</p>
+    
+    <a href="{% url 'ware_list' %}" class="btn btn-primary">Back to List</a>
+</body>
+</html>

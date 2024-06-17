@@ -1,0 +1,21 @@
+{% extends 'importwares/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Formularz ImportWare</title>
+    </head>
+    <body>
+        <h1>Formularz ImportWare</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Generuj PDF</button>
+        </form>
+        
+        <a href="{% url 'ware_list' %}" class="btn btn-primary"> See all products</a>
+
+    </body>
+{% endblock %}
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+</head>
+<body>
+    <h1>Report of {{title}}</h1>
+    <p>ID: {{ data.id }}</p>
+    <p>Name: {{ data.name }}</p>
+    <p>Description: {{ data.description }}</p>
+    <p>Price: {{ data.price }}</p>
+    <p>Imported Quantity: {{ data.imported_quantity }}</p>
+    <p>Image: <img src="{{ data.image.url }}" alt="{{ data.name }}" class="img-fluid"></p>
+    <p>Imported: {{ data.imported }}</p>
+    <p>Exported: {{ data.exported }}</p>
+    <p>Imported Quantity: {{ data.warehouse_from }}</p>
+    <p>Imported Quantity: {{ data.warehouse_loc }}</p>
+    <p>Imported Quantity: {{ data.warehouse }}</p>
+</body>
+</html>

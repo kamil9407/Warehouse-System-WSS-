@@ -1,0 +1,29 @@
+{% extends 'importwares/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ware List</title>
+</head>
+<body>
+    <h1>Ware List</h1>
+    <ul>
+        {% for ware in wares %}
+            <p>ID: </p>{{ware.id}}
+            <p>Name: </p>{{ware.name}}
+            <p>Description: </p>{{ware.description}}
+            <p>Quantity: </p>{{ware.imported_quantity}}
+            <p>Price: </p>{{ware.price}} <p>$</p>
+            <p>Imported? </p>{{ware.imported}}
+            <p>Exported? </p>{{ware.exported}}
+            <p>From: </p>{{ware.warehouse_from}}
+            <p>Warehouse_Loc: </p>{{ware.warehouse_loc}}
+            <p>Warehouse: </p>{{ware.warehouse}}
+            <p>Image</p><img src="{{'ware.image.url'}}" alt="">
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_report' %}" class="btn btn primary">Import Ware</a>
+</body>
+</html>
+{% endblock %}
